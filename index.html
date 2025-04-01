@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <title>카카오톡 공유 테스트</title>
+  <script src="https://t1.kakaocdn.net/kakao_js_sdk/2.7.4/kakao.min.js"
+          integrity="sha384-DKYJZ8NLiK8MN4/C5P2dtSmLQ4KwPaoqAfyA/DfmEc1VDxu4yyC7wy6K1Hs90nka"
+          crossorigin="anonymous"></script>
+  <script>
+    Kakao.init('07d38e74b5626149b65b0982fe22d4fe'); // 네 앱 JS 키
+  </script>
+</head>
+<body>
+
+  <h1>카카오 공유 테스트</h1>
+  <a id="kakaotalk-sharing-btn" href="javascript:;">
+    <img src="https://developers.kakao.com/assets/img/about/logos/kakaotalksharing/kakaotalk_sharing_btn_medium.png" />
+  </a>
+
+  <script>
+    Kakao.Share.createDefaultButton({
+      container: '#kakaotalk-sharing-btn',
+      objectType: 'feed',
+      content: {
+        title: '김혜강님이 만든 서비스입니다',
+        description: 'AI 기반 소개팅 매칭 서비스',
+        imageUrl: 'https://your-test.vercel.app/images/test.jpg', // 나중에 public에 넣을 이미지
+        link: {
+          mobileWebUrl: 'https://pairing-client.vercel.app',
+          webUrl: 'https://pairing-client.vercel.app',
+        },
+      },
+      buttons: [
+        {
+          title: '이동하기',
+          link: {
+            mobileWebUrl: 'https://pairing-client.vercel.app',
+            webUrl: 'https://pairing-client.vercel.app',
+          },
+        }
+      ]
+    });
+  </script>
+
+</body>
+</html>
